@@ -34,7 +34,7 @@ public class A003DifferentType {
         row.createCell(5).setCellValue(true);
         row.createCell(6).setCellType(CellType.ERROR);
 
-        Tool.getExcelFile(workbook, DEFAULT_EXCEL_PATH);
+        Tool.generateExcelFile(workbook, DEFAULT_EXCEL_PATH);
 
         log.info("程序执行完毕");
     }

@@ -10,6 +10,11 @@ package com.moqi.constant;
 public class Constant {
 
     /**
+     * 测试默认使用 Excel 文件夹路径
+     */
+    public static final String DEFAULT_PATH = "/Users/moqi/Downloads/excel_test/";
+
+    /**
      * 测试默认使用 Excel 文件路径
      */
     public static final String DEFAULT_EXCEL_PATH = "/Users/moqi/Downloads/excel_test/demo.xlsx";

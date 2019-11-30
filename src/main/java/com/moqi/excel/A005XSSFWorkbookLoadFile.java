@@ -42,7 +42,7 @@ public class A005XSSFWorkbookLoadFile {
         Cell cell = row.createCell(0);
         cell.setCellValue("OPCPackage");
 
-        Tool.getExcelFile(workbook, TARGET_PATH);
+        Tool.generateExcelFile(workbook, TARGET_PATH);
         pkg.close();
 
         log.info("程序执行完毕");

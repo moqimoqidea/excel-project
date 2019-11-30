@@ -28,7 +28,7 @@ public class A002FirstLoadFileExcel {
         Cell cell = row.createCell(0);
         cell.setCellValue("Just Test");
 
-        Tool.getExcelFile(workbook, TARGET_PATH);
+        Tool.generateExcelFile(workbook, TARGET_PATH);
 
         log.info("程序执行完毕");
     }

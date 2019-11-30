@@ -23,7 +23,7 @@ public class A001BlankExcel {
         XSSFSheet sheet = workbook.createSheet("Demo Sheet");
         sheet.createRow(0).createCell(0).setCellValue("Demo Cell");
 
-        Tool.getExcelFile(workbook, DEFAULT_EXCEL_PATH);
+        Tool.generateExcelFile(workbook, DEFAULT_EXCEL_PATH);
 
         log.info("程序执行完毕");
     }

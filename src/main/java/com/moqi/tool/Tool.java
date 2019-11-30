@@ -7,6 +7,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 import static com.moqi.constant.Constant.YYYY_MM_DD;
 import static com.moqi.constant.Constant.YYYY_MM_DD_HH_MM_SS;
@@ -52,15 +54,15 @@ public class Tool {
      * @param workbook workbook
      * @param filePath 文件路径
      */
-    public static void getExcelFile(Workbook workbook, String filePath) {
-        try {
-            Tool.removeOldFile(filePath);
-            FileOutputStream out = new FileOutputStream(new File(filePath));
+    public static void generateExcelFile(Workbook workbook, String filePath) {
+
+        try (OutputStream out = new FileOutputStream(filePath)) {
             workbook.write(out);
-            out.close();
-        } catch (Exception e) {
+            workbook.close();
+        } catch (IOException e) {
             log.warn("getExcelFile 方法发生异常");
         }
+
     }
 
     /**
