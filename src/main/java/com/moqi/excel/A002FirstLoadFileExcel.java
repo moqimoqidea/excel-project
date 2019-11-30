@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -26,14 +25,7 @@ public class A002FirstLoadFileExcel {
         Cell cell = row.createCell(0);
         cell.setCellValue("Just Test");
 
-        try {
-            Tool.removeOldFile(TARGET_PATH);
-            FileOutputStream out = new FileOutputStream(new File(TARGET_PATH));
-            workbook.write(out);
-            out.close();
-        } catch (Exception e) {
-            log.warn("A002FirstLoadFileExcel main 方法发生异常");
-        }
+        Tool.getExcelFile(workbook, TARGET_PATH);
 
         log.info("程序执行完毕");
     }
