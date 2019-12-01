@@ -1,9 +1,8 @@
 package com.moqi.tool;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.CreationHelper;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,6 +20,8 @@ import static com.moqi.constant.Constant.YYYY_MM_DD_HH_MM_SS;
  */
 @Slf4j
 public class Tool {
+
+    private static final int HUNDRED = 100;
 
     /**
      * 删除文件
@@ -91,6 +92,21 @@ public class Tool {
         cellStyle.setDataFormat(createHelper.createDataFormat().getFormat(YYYY_MM_DD_HH_MM_SS));
 
         return cellStyle;
+    }
+
+    /**
+     * 在表内 100 * 100 方格内生成字符串供测试用
+     *
+     * @param sheet 表
+     */
+    public static void fillValueOnSheet(Sheet sheet) {
+        for (int i = 0; i < HUNDRED; i++) {
+            Row row1 = sheet.createRow(i);
+            for (int j = 0; j < HUNDRED; j++) {
+                CellUtil.createCell(row1, j, i + " " + j);
+            }
+            sheet.autoSizeColumn(i);
+        }
     }
 
 }
