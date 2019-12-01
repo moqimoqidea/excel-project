@@ -2,7 +2,6 @@ package com.moqi.tool;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.util.CellUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -101,13 +100,7 @@ public class Tool {
      * @param sheet 表
      */
     public static void fill10000ValueOnSheet(Sheet sheet) {
-        for (int i = 0; i < HUNDRED; i++) {
-            Row row1 = sheet.createRow(i);
-            for (int j = 0; j < HUNDRED; j++) {
-                CellUtil.createCell(row1, j, i + " " + j);
-            }
-            sheet.autoSizeColumn(i);
-        }
+        fillValueOnSheet(sheet, HUNDRED);
     }
 
     /**
@@ -116,10 +109,20 @@ public class Tool {
      * @param sheet 表
      */
     public static void fill100ValueOnSheet(Sheet sheet) {
-        for (int i = 0; i < TEN; i++) {
-            Row row1 = sheet.createRow(i);
-            for (int j = 0; j < TEN; j++) {
-                CellUtil.createCell(row1, j, i + " " + j);
+        fillValueOnSheet(sheet, TEN);
+    }
+
+    /**
+     * 抽取方法，完成对 sheet 填充
+     *
+     * @param sheet 表
+     * @param size  一致的行和列数
+     */
+    private static void fillValueOnSheet(Sheet sheet, int size) {
+        for (int i = 0; i < size; i++) {
+            Row row = sheet.createRow(i);
+            for (int j = 0; j < size; j++) {
+                row.createCell(j).setCellValue(i + j);
             }
             sheet.autoSizeColumn(i);
         }
