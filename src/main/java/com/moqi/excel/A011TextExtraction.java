@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import static com.moqi.constant.Constant.DEFAULT_XLS_PATH;
+import static com.moqi.constant.Constant.DEFAULT_XLS_DIR_PATH;
 
 /**
  * 文字提取
@@ -23,8 +23,10 @@ import static com.moqi.constant.Constant.DEFAULT_XLS_PATH;
 @Slf4j
 public class A011TextExtraction {
 
+    private static final String A011_PATH = "A011.xls";
+
     public static void main(String[] args) {
-        try (InputStream inp = new FileInputStream(DEFAULT_XLS_PATH)) {
+        try (InputStream inp = new FileInputStream(DEFAULT_XLS_DIR_PATH + A011_PATH)) {
             HSSFWorkbook wb = new HSSFWorkbook(new POIFSFileSystem(inp));
             ExcelExtractor extractor = new ExcelExtractor(wb);
             // 是否不将计算公式的结果呈现

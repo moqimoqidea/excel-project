@@ -34,7 +34,7 @@ public class Constant {
     /**
      * 测试默认使用 XLS 文件路径
      */
-    public static final String DEFAULT_XLS_PATH = "src/main/resources/xls/xls_demo.xls";
+    public static final String DEFAULT_XLS_PATH = "src/main/resources/xls/demo.xls";
 
     /**
      * 字符串 YYYY_MM_DD_HH_MM_SS
