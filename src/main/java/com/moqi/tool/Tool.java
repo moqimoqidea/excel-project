@@ -22,6 +22,7 @@ import static com.moqi.constant.Constant.YYYY_MM_DD_HH_MM_SS;
 public class Tool {
 
     private static final int HUNDRED = 100;
+    private static final int TEN = 10;
 
     /**
      * 删除文件
@@ -99,10 +100,25 @@ public class Tool {
      *
      * @param sheet 表
      */
-    public static void fillValueOnSheet(Sheet sheet) {
+    public static void fill10000ValueOnSheet(Sheet sheet) {
         for (int i = 0; i < HUNDRED; i++) {
             Row row1 = sheet.createRow(i);
             for (int j = 0; j < HUNDRED; j++) {
+                CellUtil.createCell(row1, j, i + " " + j);
+            }
+            sheet.autoSizeColumn(i);
+        }
+    }
+
+    /**
+     * 在表内 10 * 10 方格内生成字符串供测试用
+     *
+     * @param sheet 表
+     */
+    public static void fill100ValueOnSheet(Sheet sheet) {
+        for (int i = 0; i < TEN; i++) {
+            Row row1 = sheet.createRow(i);
+            for (int j = 0; j < TEN; j++) {
                 CellUtil.createCell(row1, j, i + " " + j);
             }
             sheet.autoSizeColumn(i);

@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static com.moqi.constant.Constant.DEFAULT_XLSX_DIR_PATH;
-import static com.moqi.tool.Tool.fillValueOnSheet;
+import static com.moqi.tool.Tool.fill10000ValueOnSheet;
 
 /**
  * 打印时重复特定行和列
@@ -46,8 +46,8 @@ public class A027RepeatingRowsAndColumns {
         Sheet sheet1 = wb.getSheet("Sheet1");
         Sheet sheet2 = wb.getSheet("Sheet2");
 
-        fillValueOnSheet(sheet1);
-        fillValueOnSheet(sheet2);
+        fill10000ValueOnSheet(sheet1);
+        fill10000ValueOnSheet(sheet2);
 
         // 将行设置为在第一张纸上的第4到5行重复。
         sheet1.setRepeatingRows(CellRangeAddress.valueOf("4:5"));
