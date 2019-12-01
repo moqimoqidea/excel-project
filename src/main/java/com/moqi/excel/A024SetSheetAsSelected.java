@@ -34,6 +34,7 @@ public class A024SetSheetAsSelected {
         Tool.fill100ValueOnSheet(firstSheet);
         Tool.fill100ValueOnSheet(secondSheet);
         Tool.fill100ValueOnSheet(thirdSheet);
+        Tool.fill100ValueOnSheet(fourthSheet);
 
         secondSheet.setSelected(true);
 
