@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-import static com.moqi.constant.Constant.DEFAULT_PATH;
+import static com.moqi.constant.Constant.DEFAULT_XLSX_DIR_PATH;
 import static com.moqi.constant.Constant.SIMPLE_DATE_FORMAT_YYYY_MM_DD;
 
 /**
@@ -32,7 +32,7 @@ public class A010GettingTheCellContents {
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
 
-        OPCPackage pkg = OPCPackage.open(new File(DEFAULT_PATH + A010_PATH));
+        OPCPackage pkg = OPCPackage.open(new File(DEFAULT_XLSX_DIR_PATH + A010_PATH));
         XSSFWorkbook workbook = new XSSFWorkbook(pkg);
         // 使用数据格式化类自动格式化
         DataFormatter formatter = new DataFormatter();

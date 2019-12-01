@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.moqi.constant.Constant.DEFAULT_EXCEL_PATH;
+import static com.moqi.constant.Constant.DEFAULT_XLSX_PATH;
 
 /**
  * 将日期正确放在单元格中
@@ -46,7 +46,7 @@ public class A004DateFormat {
         calenderYmdCell.setCellValue(Calendar.getInstance());
         calenderYmdCell.setCellStyle(ymdCellStyle);
 
-        Tool.generateExcelFile(workbook, DEFAULT_EXCEL_PATH);
+        Tool.generateExcelFile(workbook, DEFAULT_XLSX_PATH);
 
         log.info("程序执行完毕");
     }

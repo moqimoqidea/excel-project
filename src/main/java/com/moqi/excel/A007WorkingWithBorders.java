@@ -4,7 +4,7 @@ import com.moqi.tool.Tool;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import static com.moqi.constant.Constant.DEFAULT_EXCEL_PATH;
+import static com.moqi.constant.Constant.DEFAULT_XLSX_PATH;
 
 /**
  * 设置单元框的格式
@@ -36,7 +36,7 @@ public class A007WorkingWithBorders {
         style.setTopBorderColor(IndexedColors.BLACK.getIndex());
         cell.setCellStyle(style);
 
-        Tool.generateExcelFile(wb, DEFAULT_EXCEL_PATH);
+        Tool.generateExcelFile(wb, DEFAULT_XLSX_PATH);
 
     }
 

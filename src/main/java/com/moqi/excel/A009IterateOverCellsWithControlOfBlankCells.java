@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.IOException;
 
-import static com.moqi.constant.Constant.DEFAULT_PATH;
+import static com.moqi.constant.Constant.DEFAULT_XLSX_DIR_PATH;
 
 /**
  * 遍历单元格，控制丢失/空白的单元格
@@ -34,7 +34,7 @@ public class A009IterateOverCellsWithControlOfBlankCells {
 
     public static void main(String[] args) throws InvalidFormatException, IOException {
 
-        OPCPackage pkg = OPCPackage.open(new File(DEFAULT_PATH + A009_PATH));
+        OPCPackage pkg = OPCPackage.open(new File(DEFAULT_XLSX_DIR_PATH + A009_PATH));
         XSSFWorkbook workbook = new XSSFWorkbook(pkg);
         XSSFSheet sheet = workbook.getSheet("Sheet1");
 

@@ -4,7 +4,7 @@ import com.moqi.tool.Tool;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import static com.moqi.constant.Constant.DEFAULT_PATH;
+import static com.moqi.constant.Constant.DEFAULT_XLSX_DIR_PATH;
 
 /**
  * 展示各种对齐方式
@@ -32,7 +32,7 @@ public class A006DemonstratesVariousAlignmentOptions {
         createCell(wb, row, 6, HorizontalAlignment.RIGHT, VerticalAlignment.TOP);
         createCell(wb, row, 7, HorizontalAlignment.CENTER, VerticalAlignment.CENTER);
 
-        Tool.generateExcelFile(wb, DEFAULT_PATH + XSSF_ALIGN_XLSX);
+        Tool.generateExcelFile(wb, DEFAULT_XLSX_DIR_PATH + XSSF_ALIGN_XLSX);
     }
 
     /**

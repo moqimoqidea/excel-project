@@ -10,7 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.Calendar;
 import java.util.Date;
 
-import static com.moqi.constant.Constant.DEFAULT_EXCEL_PATH;
+import static com.moqi.constant.Constant.DEFAULT_XLSX_PATH;
 
 /**
  * 处理不同类型的单元格
@@ -34,7 +34,7 @@ public class A003DifferentType {
         row.createCell(5).setCellValue(true);
         row.createCell(6).setCellType(CellType.ERROR);
 
-        Tool.generateExcelFile(workbook, DEFAULT_EXCEL_PATH);
+        Tool.generateExcelFile(workbook, DEFAULT_XLSX_PATH);
 
         log.info("程序执行完毕");
     }
