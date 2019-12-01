@@ -20,6 +20,11 @@ public class Constant {
     public static final String DEFAULT_EXCEL_PATH = "/Users/moqi/Downloads/excel_test/demo.xlsx";
 
     /**
+     * 测试默认使用包内模板 Excel 文件地址
+     */
+    public static final String PACKAGE_SOURCE_PATH = "src/main/resources/Book1.xlsx";
+
+    /**
      * 字符串 YYYY_MM_DD_HH_MM_SS
      */
     public static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";

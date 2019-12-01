@@ -12,6 +12,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.IOException;
 
+import static com.moqi.constant.Constant.PACKAGE_SOURCE_PATH;
+
 /**
  * https://poi.apache.org/components/spreadsheet/quick-guide.html
  * <p>
@@ -29,7 +31,6 @@ import java.io.IOException;
 @Slf4j
 public class A005XSSFWorkbookLoadFile {
 
-    private static final String PACKAGE_SOURCE_PATH = "src/main/resources/Book1.xlsx";
     private static final String TARGET_PATH = "/Users/moqi/Downloads/excel_test/Book2.xlsx";
 
     public static void main(String[] args) throws IOException, InvalidFormatException {

@@ -7,6 +7,8 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 import java.io.IOException;
 
+import static com.moqi.constant.Constant.PACKAGE_SOURCE_PATH;
+
 /**
  * 测试使用 Workbook 打开 Excel 文件并写入保存
  * 在来源和目标路径不一致的情况下，来源文件不会变动
@@ -17,7 +19,6 @@ import java.io.IOException;
 @Slf4j
 public class A002FirstLoadFileExcel {
 
-    private static final String PACKAGE_SOURCE_PATH = "src/main/resources/Book1.xlsx";
     private static final String TARGET_PATH = "/Users/moqi/Downloads/excel_test/Book2.xlsx";
 
     public static void main(String[] args) throws IOException {
