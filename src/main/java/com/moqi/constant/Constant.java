@@ -1,5 +1,7 @@
 package com.moqi.constant;
 
+import java.text.SimpleDateFormat;
+
 /**
  * 项目公用常量
  *
@@ -33,5 +35,15 @@ public class Constant {
      * 字符串 YYYY_MM_DD
      */
     public static final String YYYY_MM_DD = "yyyy-MM-dd";
+
+    /**
+     * 日期格式化，格式为 YYYY_MM_DD_HH_MM_SS
+     */
+    public static final SimpleDateFormat SIMPLE_DATE_FORMAT_YYYY_MM_DD_HH_MM_SS = new SimpleDateFormat(YYYY_MM_DD_HH_MM_SS);
+
+    /**
+     * 日期格式化，格式为 YYYY_MM_DD
+     */
+    public static final SimpleDateFormat SIMPLE_DATE_FORMAT_YYYY_MM_DD = new SimpleDateFormat(YYYY_MM_DD);
 
 }
