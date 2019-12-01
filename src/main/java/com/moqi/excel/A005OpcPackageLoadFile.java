@@ -15,11 +15,6 @@ import java.io.IOException;
 import static com.moqi.constant.Constant.PACKAGE_SOURCE_PATH;
 
 /**
- * https://poi.apache.org/components/spreadsheet/quick-guide.html
- * <p>
- * If using HSSFWorkbook or XSSFWorkbook directly, you should generally go through POIFSFileSystem or OPCPackage,
- * to have full control of the lifecycle (including closing the file when done):
- * <p>
  * 如果直接使用 HSSFWorkbook 或 XSSFWorkbook，通常应通过 POIFSFileSystem 或 OPCPackage
  * 来完全控制生命周期（包括完成后关闭文件）：
  * <p>
@@ -29,9 +24,9 @@ import static com.moqi.constant.Constant.PACKAGE_SOURCE_PATH;
  * On 11/30/19 21:36
  */
 @Slf4j
-public class A005XSSFWorkbookLoadFile {
+public class A005OpcPackageLoadFile {
 
-    private static final String TARGET_PATH = "/Users/moqi/Downloads/excel_test/Book2.xlsx";
+    private static final String TARGET_PATH = "src/main/resources/xlsx/Book2.xlsx";
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
 

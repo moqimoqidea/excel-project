@@ -25,7 +25,7 @@ import static com.moqi.constant.Constant.PACKAGE_SOURCE_PATH;
 @Slf4j
 public class A002FirstLoadFileExcel {
 
-    private static final String TARGET_PATH = "/Users/moqi/Downloads/excel_test/Book2.xlsx";
+    private static final String TARGET_PATH = "src/main/resources/xlsx/Book2.xlsx";
 
     public static void main(String[] args) throws IOException {
 

@@ -15,7 +15,7 @@ import static com.moqi.constant.Constant.DEFAULT_PATH;
 
 public class A006DemonstratesVariousAlignmentOptions {
 
-    private static final String XSSF_ALIGN_XLSX = "xssf-align.xlsx";
+    private static final String XSSF_ALIGN_XLSX = "xlsx/xssf-align.xlsx";
 
     public static void main(String[] args) {
         Workbook wb = new XSSFWorkbook();
