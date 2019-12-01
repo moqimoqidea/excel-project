@@ -10,7 +10,7 @@ import static com.moqi.constant.Constant.DEFAULT_XLSX_DIR_PATH;
 /**
  * 在单元格中使用换行符
  *
- * @author wenbo17
+ * @author moqi
  * On 12/1/19 17:10
  */
 @Slf4j
@@ -42,7 +42,7 @@ public class A017UsingNewlinesInCells {
     /**
      * 测试 设定 sheet 列宽和行高都为 2 倍
      *
-     * @param sheet 页
+     * @param sheet 表
      */
     private static void doubleWidthAndHeight(Sheet sheet) {
         float defaultRowHeightInPoints = sheet.getDefaultRowHeightInPoints();
