@@ -33,6 +33,14 @@ import static com.moqi.constant.Constant.DEFAULT_XLSX_PATH;
  * BorderExtent.NONE的特殊值将从PropertyTemplate中删除边框。
  * 应用模板时，不会对PropertyTemplate中不存在边框属性的单元格边框进行任何更改。
  *
+ * 注意：最后一个pt.drawBorders（）调用使用BorderStyle.NONE从范围中删除边框。
+ * 像setCellStyleProperties一样，applyBorders方法合并单元格样式的属性，
+ * 因此仅当现有边框被其他东西替换时，才更改现有边框，或者仅当边框被BorderStyle.NONE替换时才删除现有边框。
+ * 若要从边框删除颜色，请使用IndexedColor.AUTOMATIC.getIndex（）。
+ *
+ * 此外，要从PropertyTemplate对象中删除边框或颜色，请使用BorderExtent.NONE。
+ * 目前尚不适用于对角线边框。
+ *
  * @author moqi
  * On 12/7/19 23:43
  */
