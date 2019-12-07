@@ -9,6 +9,9 @@ import static com.moqi.constant.Constant.DEFAULT_XLS_PATH;
 
 /**
  * 条件格式：个人理解类似格式刷
+ * <p>
+ * 在ConditionalFormats.java中查看有关Excel条件格式的更多示例
+ * http://svn.apache.org/repos/asf/poi/trunk/src/examples/src/org/apache/poi/ss/examples/ConditionalFormats.java
  *
  * @author moqi
  * On 12/7/19 23:38
