@@ -38,36 +38,42 @@ public class A038EmbeddedObjects {
         for (PackagePart pPart : workbook.getAllEmbeddedParts()) {
             String contentType = pPart.getContentType();
             // Excel工作簿-二进制或OpenXML
-            if (contentType.equals("application/vnd.ms-excel")) {
-                HSSFWorkbook embeddedWorkbook = new HSSFWorkbook(pPart.getInputStream());
-            }
-            // Excel工作簿-OpenXML文件格式
-            else if (contentType.equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) {
-                OPCPackage docPackage = OPCPackage.open(pPart.getInputStream());
-                XSSFWorkbook embeddedWorkbook = new XSSFWorkbook(docPackage);
-            }
-            // Word文档-二进制（OLE2CDF）文件格式
-            else if (contentType.equals("application/msword")) {
-                // HWPFDocument document = new HWPFDocument(pPart.getInputStream());
-            }
-            // Word文档-OpenXML文件格式
-            else if (contentType.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document")) {
-                OPCPackage docPackage = OPCPackage.open(pPart.getInputStream());
-                XWPFDocument document = new XWPFDocument(docPackage);
-            }
-            // PowerPoint文档-二进制文件格式
-            else if (contentType.equals("application/vnd.ms-powerpoint")) {
-                // HSLFSlideShow slideShow = new HSSFSlideShow(pPart.getInputStream());
-            }
-            // PowerPoint文档-OpenXML文件格式
-            else if (contentType.equals("application/vnd.openxmlformats-officedocument.presentationml.presentation")) {
-                OPCPackage docPackage = OPCPackage.open(pPart.getInputStream());
-                XSLFSlideShow slideShow = new XSLFSlideShow(docPackage);
-            }
-            // 任何其他类型的嵌入式对象。
-            else {
-                log.info("Unknown Embedded Document: {}", contentType);
-                InputStream inputStream = pPart.getInputStream();
+            switch (contentType) {
+                case "application/vnd.ms-excel": {
+                    HSSFWorkbook embeddedWorkbook = new HSSFWorkbook(pPart.getInputStream());
+                    break;
+                }
+                // Excel工作簿-OpenXML文件格式
+                case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
+                    OPCPackage docPackage = OPCPackage.open(pPart.getInputStream());
+                    XSSFWorkbook embeddedWorkbook = new XSSFWorkbook(docPackage);
+                    break;
+                }
+                // Word文档-二进制（OLE2CDF）文件格式
+                case "application/msword":
+                    // HWPFDocument document = new HWPFDocument(pPart.getInputStream());
+                    break;
+                // Word文档-OpenXML文件格式
+                case "application/vnd.openxmlformats-officedocument.wordprocessingml.document": {
+                    OPCPackage docPackage = OPCPackage.open(pPart.getInputStream());
+                    XWPFDocument document = new XWPFDocument(docPackage);
+                    break;
+                }
+                // PowerPoint文档-二进制文件格式
+                case "application/vnd.ms-powerpoint":
+                    // HSLFSlideShow slideShow = new HSSFSlideShow(pPart.getInputStream());
+                    break;
+                // PowerPoint文档-OpenXML文件格式
+                case "application/vnd.openxmlformats-officedocument.presentationml.presentation": {
+                    OPCPackage docPackage = OPCPackage.open(pPart.getInputStream());
+                    XSLFSlideShow slideShow = new XSLFSlideShow(docPackage);
+                    break;
+                }
+                // 任何其他类型的嵌入式对象。
+                default:
+                    log.info("Unknown Embedded Document: {}", contentType);
+                    InputStream inputStream = pPart.getInputStream();
+                    break;
             }
         }
     }
