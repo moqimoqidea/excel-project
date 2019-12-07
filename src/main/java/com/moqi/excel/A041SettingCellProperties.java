@@ -18,6 +18,9 @@ import static com.moqi.constant.Constant.DEFAULT_XLSX_PATH;
  * CellUtil.setCellProperties允许您执行此操作，而无需在电子表格中创建一堆不必要的中间样式。
  * <p>
  * 将属性创建为Map，并以以下方式将其应用于单元格。
+ * <p>
+ * 注意：这不会替换单元格的属性，它会将您放入Map中的属性与单元格的现有样式属性合并。
+ * 如果属性已经存在，则将其替换为新属性。如果属性不存在，则将其添加。此方法不会删除CellStyle属性。
  *
  * @author moqi
  * On 12/7/19 23:43
