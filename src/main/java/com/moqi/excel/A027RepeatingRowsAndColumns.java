@@ -2,14 +2,10 @@ package com.moqi.excel;
 
 import com.moqi.tool.Tool;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import java.io.File;
-import java.io.IOException;
 
 import static com.moqi.constant.Constant.DEFAULT_XLSX_DIR_PATH;
 import static com.moqi.tool.Tool.fill10000ValueOnSheet;
@@ -40,11 +36,11 @@ public class A027RepeatingRowsAndColumns {
     private static final String A027_PATH = "A027.xlsx";
 
 
-    public static void main(String[] args) throws IOException, InvalidFormatException {
-        Workbook wb = new XSSFWorkbook(new File(DEFAULT_XLSX_DIR_PATH + A027_PATH));
+    public static void main(String[] args) {
+        Workbook wb = new XSSFWorkbook();
 
-        Sheet sheet1 = wb.getSheet("Sheet1");
-        Sheet sheet2 = wb.getSheet("Sheet2");
+        Sheet sheet1 = wb.createSheet("Sheet1");
+        Sheet sheet2 = wb.createSheet("Sheet2");
 
         fill10000ValueOnSheet(sheet1);
         fill10000ValueOnSheet(sheet2);
