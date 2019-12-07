@@ -15,7 +15,7 @@ import static com.moqi.constant.Constant.DEFAULT_XLSX_DIR_PATH;
 
 public class A006DemonstratesVariousAlignmentOptions {
 
-    private static final String XSSF_ALIGN_XLSX = "xlsx/xssf-align.xlsx";
+    private static final String XSSF_ALIGN_XLSX = "xssf-align.xlsx";
 
     public static void main(String[] args) {
         Workbook wb = new XSSFWorkbook();
@@ -31,6 +31,8 @@ public class A006DemonstratesVariousAlignmentOptions {
         createCell(wb, row, 5, HorizontalAlignment.LEFT, VerticalAlignment.TOP);
         createCell(wb, row, 6, HorizontalAlignment.RIGHT, VerticalAlignment.TOP);
         createCell(wb, row, 7, HorizontalAlignment.CENTER, VerticalAlignment.CENTER);
+        // 对 7 赋予两次属性验证是否覆盖，结果：确实会覆盖
+        createCell(wb, row, 7, HorizontalAlignment.RIGHT, VerticalAlignment.TOP);
 
         Tool.generateExcelFile(wb, DEFAULT_XLSX_DIR_PATH + XSSF_ALIGN_XLSX);
     }
