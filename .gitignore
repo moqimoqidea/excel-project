@@ -1,6 +1,6 @@
 .idea
 target
-ExcelProject01.iml
+*.iml
 .DS_Store
 *.xlsx
 *.xls
